@@ -18,7 +18,7 @@
 
   <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
 
-      <link rel="stylesheet" href="/style.css">
+      <link rel="stylesheet" href="style.css">
 <style type="text/css">
     #form .form-group label.error {
     color: #FB3A3A;
@@ -39,7 +39,7 @@ $(document).ready(function(){
     $("form").submit(function(event){
         event.preventDefault();
         var formValues = $(this).serialize();
-        $.post("validation.php", formValues, function(data){
+        $.post("", formValues, function(data){
             $("#result").html(data);
         });
     });

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery post() Demo</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $("form").submit(function(event){
+        event.preventDefault();
+        var formValues = $(this).serialize();
+        $.post("add.php", formValues, function(data){
+            $("#result").html(data);
+        });
+    });
+});
+</script>
+
+</head>
+<body>
+<form>
+        <label>Number 1: <input type="text" name="number1"></label>
+        <label>Number 2: <textarea cols="50" name="number2"></textarea></label>
+        <input type="submit" value="Send">
+    </form>
+    <div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		var myusername = $("#username").val();
+$.ajax({
+  type: "GET",
+  url: "serverscript.xxx",
+  data: myusername,
+  cache: false,
+  success: function(data){
+     $("#resultarea").text(data);
+  }
+});
+	</script>
+</head>
+<body>
+<input type="text" name="username" id="username">
+<button type="submit" id="submit-btn">Traditional Submit</button>
+<div id="resultarea"></div>
+</body>
+</html>

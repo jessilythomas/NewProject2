@@ -1,0 +1,30 @@
+<html>
+   <head>
+    <title>Form Page</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		
+      
+   </head>
+	
+   <body>
+      
+<form action="process.php" method="post" id="reg-form">
+        Username: <input type="text" id="username" name="username">
+        <br>
+        Password: <input type="password" id="password" name="password">
+        <br>
+        <button type="submit" id="submit-btn">Traditional Submit</button>
+        <button type="button" id="post-btn">$.Post Submit</button>
+</form>
+<script>
+    $("#post-btn").click(function(){        
+        $.post("process.php",$('#reg-form').serialize(),function(data){
+            alert(data);
+        });
+    });
+</script>
+
+
+
+      </body>
+</html>

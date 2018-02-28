@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form>
+<div id="demo">
+<h1>The XMLHttpRequest Object</h1>
+<input type="text" name="" required>
+<button type="button" onclick="loadDoc()">Details</button>
+</div>
+</form>
+<!--
+ <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.js"></script>
+    <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+<script type="text/javascript">
+  $('#form-signin').validate({
+  });
+</script>
+-->
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "jessily thomas.xml", true);
+  xhttp.send();
+}
+</script>
+</body>
+</html>

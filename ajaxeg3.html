@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+function AddNumbers()
+{
+    // Create an instance of the HTTP Request Object
+    var xmlHttp = new XMLHttpRequest();
+
+    var value1 = document.getElementById("txtValue1").value;
+    var value2 = document.getElementById("txtValue2").value;
+
+    // Specify HTTP POST so that parameters can be passed in
+    // request body
+    xmlHttp.open("POST",'/server' , true);
+
+    // Send the parameters in CSV format
+    xmlHttp.send(value1 + "," + value2);
+
+    var result = document.getElementById("spanResult");
+
+    // Use result of calculation from server
+    result.innerHTML = xmlHttp.responseText;
+}
+</script>
+</head>
+<body>
+<form>
+    <input id="txtValue1"/>
+    <input id="txtValue2"/>
+    <input onclick="AddNumbers();"type="button" value="Add"/>
+
+    <p>Result:</p>
+    <span id="spanResult"></span>
+</form>
+</body>
+</html>
